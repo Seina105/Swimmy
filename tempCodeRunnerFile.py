@@ -1,2 +1,10 @@
- sign = pg.image.load(f"images/board.png")
-    sign = pg.transform.rotozoom(sign, 0, 2.5)
+def result_voting(mobs):
+    votes = {}
+    for mob in mobs:
+        if mob.name not in votes:
+            votes[mob.name] = 0
+        if mob.target not in votes:
+            votes[mob.target] = 1
+            continue
+        
+        votes[mob.target] += 1
